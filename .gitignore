@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdm.toml
+*.mypy_cache/
+*.env
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# PyCharm
+.idea/
+
+# Env files
+.env
+.env.*
+
+# Coverage & testing
+htmlcov/
+.coverage
+coverage.xml
+.pytest_cache/
+
+# Node.js (if using frontend in project)
+node_modules/
+npm-debug.log
+yarn-error.log
+build/
+dist/
