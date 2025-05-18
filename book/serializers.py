@@ -27,4 +27,23 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
-        
+
+
+class BorrowSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Borrow
+        fields = ['id', 'user', 'book', 'borrow_date', 'due_date', 'return_date']
+        read_only_fields = ['borrow_date', 'due_date', 'return_date', 'user']
+
+class BorrowSerializer(serializers.ModelSerializer):
+    book_title = serializers.CharField(source='book.title', read_only=True)
+
+    class Meta:
+        model = Borrow
+        fields = '__all__'
+        read_only_fields = '__all__' 
+
+class BorrowReturnSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Borrow
+        fields = []
