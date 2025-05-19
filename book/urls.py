@@ -15,7 +15,7 @@ urlpatterns = [
     path('categories/create/', CategoryCreateView.as_view(), name='category_create'),
 
     path('borrow/', BorrowListView.as_view(), name='borrow_list'),
-    path('borrow/create', BorrowCreateView.as_view(), name='borrow_create'),
+    path('borrow/create/', BorrowCreateView.as_view(), name='borrow_create'),
     path('return/', ReturnBookView.as_view(), name='return'),
     path('users/<int:id>/penalties/', UserPenaltyPointsView.as_view(), name='penalties'),
 ]

@@ -114,7 +114,7 @@ class CategoryCreateView(generics.CreateAPIView):
 
 
 class BorrowCreateView(generics.CreateAPIView):
-    serializer_class = BorrowSerializer
+    serializer_class = BorrowcreateSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):

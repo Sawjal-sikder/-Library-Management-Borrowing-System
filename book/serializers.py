@@ -35,13 +35,17 @@ class BorrowSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'book', 'borrow_date', 'due_date', 'return_date']
         read_only_fields = ['borrow_date', 'due_date', 'return_date', 'user']
 
-class BorrowSerializer(serializers.ModelSerializer):
+class BorrowcreateSerializer(serializers.ModelSerializer):
     book_title = serializers.CharField(source='book.title', read_only=True)
 
     class Meta:
         model = Borrow
         fields = '__all__'
-        read_only_fields = '__all__' 
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.read_only = True
 
 class BorrowReturnSerializer(serializers.ModelSerializer):
     class Meta:
